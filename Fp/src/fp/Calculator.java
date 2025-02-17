@@ -6,7 +6,7 @@ package fp;
 
 /**
  *
- * @author Владислав
+ * @author Г‚Г«Г Г¤ГЁГ±Г«Г Гў
  */
 public class Calculator {
     public static double add(double a, double b){
@@ -16,10 +16,12 @@ public class Calculator {
     public static double substract(double a, double b){
         return a-b;
     }
+
     public static double multiply(double a, double b){
         return a*b;
     }
     public static double divide(double a, double b){
         return a/b;
     }
+
 }
