@@ -10,7 +10,7 @@ import javax.swing.*;
 
 /**
  *
- * @author Владислав
+ * @author Г‚Г«Г Г¤ГЁГ±Г«Г Гў
  */
 public class CalculatorGUI extends JFrame implements ActionListener{
      JPanel panel;
@@ -19,14 +19,14 @@ public class CalculatorGUI extends JFrame implements ActionListener{
      JLabel label;
     
     public CalculatorGUI(){
-        super("меню для использования гуи");
+        super("Г¬ГҐГ­Гѕ Г¤Г«Гї ГЁГ±ГЇГ®Г«ГјГ§Г®ГўГ Г­ГЁГї ГЈГіГЁ");
         panel = new JPanel();
         getContentPane().add(panel);
         
-        button = new JButton("нажмите для сложения");
+        button = new JButton("Г­Г Г¦Г¬ГЁГІГҐ Г¤Г«Гї Г±Г«Г®Г¦ГҐГ­ГЁГї");
         f1 = new JTextField(30);
         f2 = new JTextField(30);
-        label = new JLabel("здесь будет результат");
+        label = new JLabel("Г§Г¤ГҐГ±Гј ГЎГіГ¤ГҐГІ Г°ГҐГ§ГіГ«ГјГІГ ГІ");
         
         button.setActionCommand("Ok");
         button.addActionListener(this);
@@ -34,6 +34,18 @@ public class CalculatorGUI extends JFrame implements ActionListener{
         panel.add(f1);
         panel.add(f2);
         panel.add(label);
+        
+        JButton buttonMultiply = new JButton("multiply");
+        buttonMultiply.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               double a = Double.parseDouble(f1.getText());
+               double b = Double.parseDouble(f2.getText());
+               label.setText(Double.toString(Calculator.multiply(a, b)));
+            }
+        });
+        panel.add(buttonMultiply);
+
         
         pack();
         setVisible(true);
